@@ -10,6 +10,7 @@
   },
   "dependencies": {
     "@messagevisor/cli": "0.8.0",
-    "@messagevisor/module-icu": "0.8.0"
+    "@messagevisor/module-icu": "0.8.0",
+    "wrangler": "^4.98.0"
   }
 }
