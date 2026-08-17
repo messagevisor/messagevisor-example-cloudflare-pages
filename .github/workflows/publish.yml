@@ -48,6 +48,10 @@ jobs:
 
       - name: Push back to origin
         run: |
-          git add .messagevisor/*
-          git commit -m "[skip ci] Revision $(cat .messagevisor/REVISION)"
-          git push
+          git add .messagevisor/
+          if git diff --cached --quiet; then
+            echo "No state file changes to commit"
+          else
+            git commit -m "[skip ci] Revision $(cat .messagevisor/REVISION)"
+            git push
+          fi
